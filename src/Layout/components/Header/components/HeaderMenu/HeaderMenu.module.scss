@@ -1,0 +1,20 @@
+.headerMenu {
+  display: flex;
+  justify-content: space-evenly;
+  height: 60px;
+  background-color: #dee2e6;
+  align-items: center;
+}
+
+.container {
+  h4 {
+    font-weight: 100;
+    font-size: 16px;
+    min-width: 216px;
+    padding: 10px;
+    &:hover {
+      color: #C30005;
+      cursor: pointer;
+    }
+  }
+}

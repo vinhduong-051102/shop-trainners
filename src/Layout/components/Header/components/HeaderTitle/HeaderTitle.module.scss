@@ -1,0 +1,62 @@
+.header-title {
+  width: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 0;
+  .logo {
+    img {
+      width: 162px;
+      height: 50px;
+    }
+  }
+  .search {
+    width: 645px;
+    padding: 3px;
+    font-size: 14px;
+    input {
+      width: 550px;
+      height: 34px;
+      outline: none;
+      padding: 2px 8px;
+      border-radius: 2px;
+      border: none;
+    }
+    button {
+      height: 34px;
+      padding: 5px 15px;
+      border-radius: 2px;
+      border: none;
+      font-weight: 200;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  .login-resgister {
+    button {
+      color: #adb5bd;
+      background-color: transparent;
+      border: none;
+      font-size: 16px;
+      &:hover {
+        color: #fff;
+      }
+    }
+    span {
+      margin: 0 10px;
+    }
+  }
+  .cart {
+    button {
+      color: #adb5bd;
+      background-color: transparent;
+      border: none;
+      font-size: 20px;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
