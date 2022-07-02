@@ -3,15 +3,22 @@
   background-color: #000;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+
   padding: 20px 0;
+  height: 60%;
   .logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
     img {
       width: 162px;
       height: 50px;
     }
   }
   .search {
+    height: 100%;
+    display: flex;
+    align-items: center;
     width: 645px;
     padding: 3px;
     font-size: 14px;
@@ -32,9 +39,15 @@
       &:hover {
         opacity: 0.8;
       }
+      &:active {  
+        opacity: 1;
+      }
     }
   }
   .login-resgister {
+    height: 100%;
+    display: flex;
+    align-items: center;
     button {
       color: #adb5bd;
       background-color: transparent;
@@ -49,11 +62,15 @@
     }
   }
   .cart {
+    height: 100%;
+    display: flex;
+    align-items: center;
     button {
       color: #adb5bd;
       background-color: transparent;
       border: none;
       font-size: 20px;
+      height: 100%;
       &:hover {
         color: #fff;
       }

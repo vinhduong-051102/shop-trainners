@@ -6,7 +6,7 @@ const cx = className.bind(styles)
 function MenuItem({ children, path='', onClick= () => {} }) {
   return ( 
     <div onClick={onClick} className={cx('menu-item')} >
-      { children }
+      <p>{ children }</p>
     </div>
   );
 }

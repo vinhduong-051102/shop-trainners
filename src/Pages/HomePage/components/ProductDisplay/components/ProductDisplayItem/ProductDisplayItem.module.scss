@@ -1,0 +1,39 @@
+.wrapper {
+  padding: 30px;
+  border: 1px solid transparent;
+  position: relative;
+
+  .title {
+    img {
+      width: 100%;
+      padding: 0 100px 50px 100px;
+    }
+  }
+  button {
+    position: absolute;
+    display: none;
+    top: 50%;
+    right: 50%;
+    transform: translateX(50%);
+    padding: 6px 12px;
+    background-color: #198754;
+    border: 1px solid #198754;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 18px;
+    &:hover {
+      background-color: #2db676;
+      border: 1px solid #2db676;
+    }
+    &:active {
+      background-color: #198754;
+      border: 1px solid #198754;
+    }
+  }
+  &:hover {
+    border: 1px solid #ccc;
+  }
+  &:hover > button {
+    display: block;
+  }
+}

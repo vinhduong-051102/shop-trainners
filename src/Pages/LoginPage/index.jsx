@@ -20,7 +20,8 @@ function LogginPage() {
       placeholder: "Nhập địa chỉ email",
       value: userInfo.email,
       onChange: handleInputUserInfo,
-      name: "email"
+      name: "email",
+      type: "email"
     },
     {
       label: "Mật khẩu",
@@ -28,6 +29,7 @@ function LogginPage() {
       value: userInfo.password,
       onChange: handleInputUserInfo,
       name: "password",
+      type: "password",
     }
   ]
   return ( 

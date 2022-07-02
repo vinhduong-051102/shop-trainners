@@ -8,6 +8,7 @@ function Layout({ children }) {
   return ( 
     <div className={cx('wrapper')}>
       <Header />
+        <div className={cx('space')}></div>
         {children}
       <Footer />
     </div> 

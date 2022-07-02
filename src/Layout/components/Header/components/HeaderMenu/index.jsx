@@ -27,8 +27,9 @@ function HeaderMenu() {
         )}
         placement="bottom-start"
         interactive
+        
       >
-        <div>
+        <div style={{height: "100%"}}>
           <MenuItem>
             Nam <FontAwesomeIcon icon={faAngleDown} />
           </MenuItem>
@@ -49,7 +50,7 @@ function HeaderMenu() {
         placement="bottom-start"
         interactive
       >
-        <div>
+        <div style={{height: "100%"}}>
           <MenuItem>
             Nữ <FontAwesomeIcon icon={faAngleDown} />
           </MenuItem>

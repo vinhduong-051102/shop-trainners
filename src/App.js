@@ -1,15 +1,15 @@
 import { MainLayout, EmptyLayout } from "./Layout";
-import { Modal } from "./Pages/components";
-import { LogginPage } from './Pages'
+
+import { LogginPage, RegisterPage, HomePage } from './Pages'
+import { Slider } from './Pages/HomePage/components'
 
 
 function App() {
-  
-  return (
-    <EmptyLayout>
-      <LogginPage/>
-    </EmptyLayout>
+  return (   
+    <MainLayout>
+      <HomePage />
+    </MainLayout>
   );
-}
-
+};
+  
 export default App;
