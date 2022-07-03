@@ -1,3 +1,4 @@
 import Slider from "./Slider";
 import ProductDisplay from "./ProductDisplay";
-export { Slider, ProductDisplay }
+import ProductSlider from "./ProductSlider";
+export { Slider, ProductDisplay, ProductSlider }

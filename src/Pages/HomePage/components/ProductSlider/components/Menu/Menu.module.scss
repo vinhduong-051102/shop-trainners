@@ -1,0 +1,16 @@
+.wrapper {
+  margin: 0 80px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  .menu {
+    width: 100%;
+    padding: 0 260px;
+    display: flex;
+    justify-content: space-around;
+    .menuItem {
+      font-size: 15px;
+      padding: 20px 50px;
+    }
+  }
+}
