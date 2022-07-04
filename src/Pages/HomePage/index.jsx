@@ -1,6 +1,6 @@
 import classNames from "classnames/bind";
 import styles from './Home.module.scss';
-import { Slider, ProductDisplay, ProductSlider } from "./components";
+import { Slider, ProductDisplay, ProductSlider, ProductSales, Other } from "./components";
 
 const cx = classNames.bind(styles)
 
@@ -10,6 +10,8 @@ function HomePage() {
       <Slider />
       <ProductDisplay />
       <ProductSlider />
+      <ProductSales />
+      <Other />
     </div>
   );
 }

@@ -4,10 +4,17 @@ import logo from "./assets/logo-mona.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import Tippy from '@tippyjs/react/headless'
+import { Link } from 'react-router-dom'
+import { useEffect } from "react";
 import Popper from '../../../Popper'
 const cx = className.bind(styles)
 
 function HeaderTitle() {
+  const beforeUrl = window.location.pathname
+  useEffect(() => {
+    localStorage.setItem('beforeUrl', String(beforeUrl))
+    console.log(beforeUrl);
+  }, [beforeUrl])
   return ( 
     <div className={cx("header-title")}>
         <div className={cx("logo")}>
@@ -20,9 +27,9 @@ function HeaderTitle() {
           </button>
         </div>
         <div className={cx("login-resgister")}>
-          <button>Đăng ký</button>
+          <button><Link to='/register' className={cx("link")}>Đăng ký</Link></button>
           <span></span>
-          <button>Đăng nhập</button>
+          <button><Link to='/login' className={cx("link")}>Đăng nhập</Link></button>
         </div>
         <div className={cx("cart")}>
         <Tippy
@@ -34,9 +41,11 @@ function HeaderTitle() {
         placement="bottom-start"
         interactive
       >
-          <button>
-            <FontAwesomeIcon icon={faCartShopping} />
-          </button>
+          <div>
+            <button>
+              <FontAwesomeIcon icon={faCartShopping} />
+            </button>
+          </div>
         
       </Tippy>
         </div>

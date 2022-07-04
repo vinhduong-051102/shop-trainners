@@ -4,10 +4,11 @@ import { Header } from './components'
 
 const cx = classNames.bind(styles)
 
-function HeaderOnly({ children }) {
+function HeaderOnly({ children, title }) {
   return ( 
     <div className={cx('wrapper')}>
-      <Header title="header" />
+      <Header title={title} />
+      <div className={cx('spacer')}></div>
       { children }
     </div>
   );

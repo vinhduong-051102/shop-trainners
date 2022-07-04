@@ -1,8 +1,11 @@
 .wrapper {
   width: 500px;
   padding: 16px;
-  border: 1px solid rgba(0,0,0,.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 6px;
+  a {
+    color: #000;
+  }
   .header {
     display: flex;
     padding: 0 16px 16px 16px;
@@ -13,16 +16,17 @@
       font-size: 24px;
       text-transform: uppercase;
     }
-    button {
+    button,
+    .link {
       background-color: transparent;
       border: none;
-      color: #808080;
+
       font-size: 24px;
       &:hover {
         opacity: 0.8;
       }
       &:active {
-        color: #000;
+        color: #808080;
       }
     }
   }

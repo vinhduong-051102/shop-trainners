@@ -1,7 +1,7 @@
 import { Modal } from "../components";
 import { useState } from 'react';   
 
-function LogginPage() {
+function LoginPage() {
   const [userInfo, setUserInfo] = useState({
     email: "",
     password: ""
@@ -37,4 +37,4 @@ function LogginPage() {
   );
 }
 
-export default LogginPage;
+export default LoginPage;

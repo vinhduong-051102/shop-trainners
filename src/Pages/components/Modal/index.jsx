@@ -3,16 +3,18 @@ import styles from "./Modal.module.scss";
 import { Input } from "./components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { Link } from 'react-router-dom'
 
 const cx = classNames.bind(styles);
 
 function Modal({ title, inputFields = [], onClickSubmit = () => {} }) {
+  const beforeUrl = localStorage.getItem('beforeUrl');
   return (
     <div className={cx("wrapper")}>
       <div className={cx("header")}>
         <h3>{title}</h3>
         <button>
-          <FontAwesomeIcon icon={faXmark} />
+          <Link to={beforeUrl} className={cx("link")}><FontAwesomeIcon icon={faXmark} /></Link>
         </button>
       </div>
       <div className={cx("body")}>

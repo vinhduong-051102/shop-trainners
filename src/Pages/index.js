@@ -1,4 +1,6 @@
-import LogginPage from "./LoginPage";
+import LoginPage from "./LoginPage";
 import RegisterPage from "./RegisterPage";
 import HomePage from "./HomePage";
-export { LogginPage, RegisterPage, HomePage }
+import IntroducePage from "./IntroducePage";
+
+export { LoginPage, RegisterPage, HomePage, IntroducePage }

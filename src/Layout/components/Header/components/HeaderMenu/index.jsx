@@ -11,8 +11,8 @@ const cx = className.bind(styles);
 function HeaderMenu() {
   return (
     <div className={cx("headerMenu")}>
-      <MenuItem>Trang chủ</MenuItem>
-      <MenuItem>Giới thiệu</MenuItem>
+      <MenuItem path='/'>Trang chủ</MenuItem>
+      <MenuItem path='/introduce'>Giới thiệu</MenuItem>
       <Tippy
         render={(attrs) => (
           <Popper>
@@ -30,8 +30,8 @@ function HeaderMenu() {
         
       >
         <div style={{height: "100%"}}>
-          <MenuItem>
-            Nam <FontAwesomeIcon icon={faAngleDown} />
+          <MenuItem path='/men'>
+            <p>Nam</p> <FontAwesomeIcon icon={faAngleDown} />
           </MenuItem>
         </div>
       </Tippy>
@@ -51,16 +51,16 @@ function HeaderMenu() {
         interactive
       >
         <div style={{height: "100%"}}>
-          <MenuItem>
-            Nữ <FontAwesomeIcon icon={faAngleDown} />
+          <MenuItem path='/women'>
+            <p>Nữ</p> <FontAwesomeIcon icon={faAngleDown} />
           </MenuItem>
         </div>
       </Tippy>
 
-      <MenuItem>Trẻ em</MenuItem>
-      <MenuItem>Phụ kiện khác</MenuItem>
-      <MenuItem>Tin tức</MenuItem>
-      <MenuItem>Liên hệ</MenuItem>
+      <MenuItem path='/children'>Trẻ em</MenuItem>
+      <MenuItem path='/other'>Phụ kiện khác</MenuItem>
+      <MenuItem path='/news'>Tin tức</MenuItem>
+      <MenuItem path='/contact'>Liên hệ</MenuItem>
     </div>
   );
 }
