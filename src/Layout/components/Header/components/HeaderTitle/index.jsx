@@ -6,7 +6,7 @@ import { faMagnifyingGlass, faCartShopping } from "@fortawesome/free-solid-svg-i
 import Tippy from '@tippyjs/react/headless'
 import { Link } from 'react-router-dom'
 import { useEffect } from "react";
-import Popper from '../../../Popper'
+import { Popper } from '@/components'
 const cx = className.bind(styles)
 
 function HeaderTitle() {

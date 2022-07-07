@@ -1,6 +1,6 @@
 import classNames from "classnames/bind"; 
 import styles from './Banner.module.scss';
-import { bannerRe } from "../../../../assets/images/Banner";
+import { bannerRe } from "@/assets/images/Banner";
 
 const cx = classNames.bind(styles)
 

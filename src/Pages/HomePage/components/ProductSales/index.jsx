@@ -1,9 +1,10 @@
 import classNames from "classnames/bind";
 import styles from "./ProductSales.module.scss";
 import { HeaderOnly } from "../Layout";
-import { imgSaleList } from "../../../../assets/images/Sales";
-import { Product } from "../../components/components";
-import { Button } from '../../../../components'
+import { imgSaleList } from "@/assets/images/Sales";
+import { Product } from "@/Pages/components";
+
+import { Button } from '@/components'
 
 const cx = classNames.bind(styles);
 

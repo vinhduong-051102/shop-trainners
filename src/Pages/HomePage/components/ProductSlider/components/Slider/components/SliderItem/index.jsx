@@ -1,6 +1,6 @@
 import classNames from "classnames/bind";
 import styles from "./SliderItem.module.scss";
-import { Product } from "../../../../../components";
+import { Product } from "../../../../../../../components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper";
 import "swiper/css";

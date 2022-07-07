@@ -1,0 +1,9 @@
+.wrapper {
+  height: 30px;
+  margin: 20px;
+  position: relative;
+  .container {
+    position: absolute;
+    right: 0;
+  }
+}

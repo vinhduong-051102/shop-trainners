@@ -1,8 +1,9 @@
 import classNames from "classnames/bind"; 
 import styles from './Other.module.scss'
 import { HeaderOnly } from "../Layout";
-import { imgList } from "../../../../assets/images/Other";
-import { Product } from '../../components/components'
+import { imgList } from "@/assets/images/Other";
+import { Product } from "@/Pages/components";
+
 
 const cx = classNames.bind(styles)
 

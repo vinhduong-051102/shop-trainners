@@ -1,0 +1,15 @@
+.wrapper {
+  .container {
+    ul {
+      position: absolute;
+      display: flex;
+      justify-content: space-evenly;
+      bottom: -20px;
+      right: 50%;
+      transform: translateX(50%);
+      li {
+        padding: 20px;
+      }
+    }
+  }
+}

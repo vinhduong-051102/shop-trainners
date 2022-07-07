@@ -1,12 +1,15 @@
 .wrapper {
   position: relative;
+  img {
+    width: 100%;
+  }
   p {
     color: #fff;
     font-weight: 500;
     font-size: 35px;
     text-transform: uppercase;
     position: absolute;
-    top: 50%;
+    top: 45%;
     right: 50%;
     transform: translateX(50%);
 

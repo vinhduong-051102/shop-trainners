@@ -1,6 +1,6 @@
 import classNames from "classnames/bind";
 import styles from './Slider.module.scss'
-import { slide1, slide2, slide3 } from '../../../../assets/images/Slider'
+import { slide1, slide2, slide3 } from '@/assets/images/Slider'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper';
 import 'swiper/css';

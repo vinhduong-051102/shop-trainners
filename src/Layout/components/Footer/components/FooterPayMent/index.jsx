@@ -1,7 +1,7 @@
 import classNames from "classnames/bind";
 import styles from './FooterPayMent.module.scss';
-import { Input, Button } from "../../../../../components";
-import * as bankLogo from '../../../../../assets/images/Bank'
+import { Input, Button } from "@/components";
+import * as bankLogo from '@/assets/images/Bank'
 
 const cx = classNames.bind(styles)
 

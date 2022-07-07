@@ -20,7 +20,7 @@ import {
   productSliderImg14,
   productSliderImg15,
   productSliderImg16,
-} from "../../../../../../assets/images/Shoes/ProductSlider";
+} from "@/assets/images/Shoes/ProductSlider";
 
 const cx = classNames.bind(styles);
 

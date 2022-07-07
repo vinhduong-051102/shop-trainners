@@ -1,0 +1,9 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  grid-template-rows: 100%;
+  margin: 40px 75px;
+  .spacer {
+    padding-bottom: 40px;
+  }
+}

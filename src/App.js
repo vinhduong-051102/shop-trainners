@@ -9,7 +9,7 @@ function App() {
     <Router>
       <Routes>
         { publicRoutes.map((route, index) => {
-          const {path} = route
+          const {path, layoutProp} = route
           let Layout = MainLayout
           if(route.layout) {
             Layout = route.layout
@@ -20,7 +20,7 @@ function App() {
           const Page = route.element
           return (
             <Route path={path} key={index} element={
-              <Layout>
+              <Layout sidebarItems={layoutProp}>
                 <Page />
               </Layout>
             } />

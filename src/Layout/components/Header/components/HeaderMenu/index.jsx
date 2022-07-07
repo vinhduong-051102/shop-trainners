@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import Tippy from "@tippyjs/react/headless";
 import className from "classnames/bind";
-import Popper from "../../../Popper";
+import { Popper } from '@/components'
 import { MenuItem } from './components'
 
 const cx = className.bind(styles);
