@@ -12,6 +12,6 @@ export const MenuSlice = createSlice({
   }
 })
 
-export const MenuReducer = MenuSlice.reducer
+export default MenuSlice.reducer
 export const { setValue } = MenuSlice.actions
 export const selectValue = (state) => state.MenuReducer.value

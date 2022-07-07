@@ -1,3 +1,3 @@
 import Header from './Header';
-import Pagination from './Pagination'
-export { Header, Pagination }
+import PaginationContent from './PaginationContent'
+export { Header, PaginationContent }

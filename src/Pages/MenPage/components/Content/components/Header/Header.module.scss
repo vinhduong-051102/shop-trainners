@@ -3,7 +3,14 @@
   margin: 20px;
   position: relative;
   .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     position: absolute;
     right: 0;
+    p {
+      font-weight: 200;
+      margin-right: 40px;
+    }
   }
 }

@@ -7,6 +7,9 @@ const publicRoutes = [
   { path: "/register", element: RegisterPage, layout: EmptyLayout },
   { path: "/introduce", element: IntroducePage },
   { path: "/men", element: MenPage },
+  { path: "/women", element: MenPage },
+  { path: "/children", element: MenPage },
+  { path: "/other", element: MenPage },
   { path: '/*', element: HomePage }
 ];
 
