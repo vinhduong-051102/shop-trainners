@@ -6,13 +6,18 @@ import FormControl from "@mui/material/FormControl";
 import NativeSelect from "@mui/material/NativeSelect";
 import Tippy from "@tippyjs/react/headless";
 import { Popper } from "@/components";
+import { useDispatch } from "react-redux";
+import { changeOptionSort } from "@/Pages/MenPage/MenPageSlice";
 
 const cx = classNames.bind(styles);
 
 function Sort() {
-  const [optionValue, setOptionValue] = useState(1);
+  const dispatch = useDispatch()
+  const [optionValue, setOptionValue] = useState(0);
   const handleSelectOptionValue = (e) => {
-    setOptionValue(e.target.value);
+    const option = e.target.value
+    dispatch(changeOptionSort(option))
+    setOptionValue(option);
   };
   return (
     <div className={cx("wrapper")}>
@@ -29,9 +34,9 @@ function Sort() {
         <Box sx={{ minWidth: 120 }}>
           <FormControl fullWidth>
             <NativeSelect defaultValue={optionValue} onChange={handleSelectOptionValue}>
-              <option value={1}>Theo mặc định</option>
-              <option value={2}>Theo giá tăng dần</option>
-              <option value={3}>Theo giá giảm dần</option>
+              <option value={0}>Theo mặc định</option>
+              <option value={1}>Theo giá tăng dần</option>
+              <option value={-1}>Theo giá giảm dần</option>
             </NativeSelect>
           </FormControl>
         </Box>

@@ -29,22 +29,22 @@ function MenPage() {
     {
       url: imgList[0],
       name: "Chuck Taylor Classic",
-      price: 500000
+      price: 100000
     },
     {
       url: imgList[1],
       name: "Chuck Taylor Classic",
-      price: 500000
+      price: 200000
     },
     {
       url: imgList[2],
       name: "Chuck Taylor Classic",
-      price: 500000
+      price: 300000
     },
     {
       url: imgList[3],
       name: "Chuck Taylor Classic",
-      price: 500000
+      price: 400000
     },
     {
       url: imgList[4],
