@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/shop-trainners/static/css/main.f85869c1.css",
-    "main.js": "/shop-trainners/static/js/main.fbda9bb6.js",
+    "main.css": "/shop-trainners/static/css/main.f501b6d7.css",
+    "main.js": "/shop-trainners/static/js/main.b535d121.js",
     "static/js/787.ab719e39.chunk.js": "/shop-trainners/static/js/787.ab719e39.chunk.js",
     "static/media/women-classic-7.jpg": "/shop-trainners/static/media/women-classic-7.301bbef84231208df8b5.jpg",
     "static/media/women-classic-6.jpg": "/shop-trainners/static/media/women-classic-6.aa1fe2de0910f3d58b35.jpg",
@@ -48,12 +48,12 @@
     "static/media/logo-vib.jpg": "/shop-trainners/static/media/logo-vib.fe51cebe351f7084087a.jpg",
     "static/media/logo-paypal.jpg": "/shop-trainners/static/media/logo-paypal.bdf4b1ca30e53dc8fb08.jpg",
     "index.html": "/shop-trainners/index.html",
-    "main.f85869c1.css.map": "/shop-trainners/static/css/main.f85869c1.css.map",
-    "main.fbda9bb6.js.map": "/shop-trainners/static/js/main.fbda9bb6.js.map",
+    "main.f501b6d7.css.map": "/shop-trainners/static/css/main.f501b6d7.css.map",
+    "main.b535d121.js.map": "/shop-trainners/static/js/main.b535d121.js.map",
     "787.ab719e39.chunk.js.map": "/shop-trainners/static/js/787.ab719e39.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f85869c1.css",
-    "static/js/main.fbda9bb6.js"
+    "static/css/main.f501b6d7.css",
+    "static/js/main.b535d121.js"
   ]
 }
