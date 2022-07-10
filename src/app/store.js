@@ -1,11 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit'
-import MenuReducer from '@/Pages/HomePage/components/ProductSlider/components/Menu/MenuSlice'
-import MenPageReducer from '@/Pages/MenPage/MenPageSlice'
+import menuReducer from '@/Pages/HomePage/components/ProductSlider/components/Menu/MenuSlice'
+import menPageReducer from '@/Pages/MenPage/MenPageSlice'
+import productReducer from '@/Pages/components/Product/productSlice'
+import cartReducer from '@/Pages/Cart/cartSlice'
 
 export const store = configureStore({
   reducer: {
-    MenuReducer,
-    MenPageReducer
+    menuReducer,
+    menPageReducer,
+    productReducer,
+    cartReducer
   }
 })
 

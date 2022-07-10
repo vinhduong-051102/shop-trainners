@@ -1,6 +1,6 @@
 import classNames from "classnames/bind";
 import styles from "./SliderItem.module.scss";
-import { Product } from "../../../../../../../components";
+import { Product } from "@/Pages/components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper";
 import "swiper/css";
@@ -31,19 +31,8 @@ function SliderItem({ imgList }) {
               <Product 
                 url={item}
                 name="Chuck Taylor Classic"
-                price="1200000"
+                price={1200000}
               />
-              {/* <div className={cx("container")}>
-                <img src={item} alt="" />
-                <div className={cx("info")}>
-                  <p className={cx("name")}>Chuck Taylor Classic</p>
-                  <p className={cx("price")}>1,200,000 đ</p>
-                </div>
-                <button>Thêm vào giỏ hàng</button>
-                <div className={cx("discount")}>
-                  10%
-                </div>
-              </div> */}
             </SwiperSlide>
           );
         })}

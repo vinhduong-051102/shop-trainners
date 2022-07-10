@@ -18,5 +18,5 @@ const MenPageSlice = createSlice({
 
 export default MenPageSlice.reducer
 export const { changePage, changeOptionSort } = MenPageSlice.actions
-export const selectPage = (state) => state.MenPageReducer.page
-export const selectOptionSort = (state) => state.MenPageReducer.optionSort
+export const selectPage = (state) => state.menPageReducer.page
+export const selectOptionSort = (state) => state.menPageReducer.optionSort

@@ -77,3 +77,24 @@
     }
   }
 }
+
+.container {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  width: 300px;
+  padding: 8px 10px;
+  .img-product {
+    img {
+      width: 100%;
+    }
+  }
+  .product-info {
+    padding-left: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    p {
+      font-size: 13px;
+    }
+  }
+}

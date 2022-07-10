@@ -1,0 +1,20 @@
+.wrapper {
+  margin: 20px 0;
+  .user {
+    display: flex;
+    .avatar {
+      margin-right: 10px;
+    }
+    .container {
+      .user-name {
+        font-size: 14px;
+        font-weight: 550;
+        padding-left: 4px;
+      }
+    }
+  }
+  .feelback {
+    padding-left: 55px;
+    padding-top: 10px;
+  }
+}
