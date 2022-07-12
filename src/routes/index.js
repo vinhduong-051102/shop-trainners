@@ -1,4 +1,4 @@
-import { HomePage, LoginPage, RegisterPage, IntroducePage, MenPage, Cart } from "../Pages";
+import { HomePage, LoginPage, RegisterPage, IntroducePage, MenPage, Cart, ViewCartPage } from "../Pages";
 import { EmptyLayout } from "../Layout";
 
 const publicRoutes = [
@@ -11,6 +11,7 @@ const publicRoutes = [
   { path: "/children", element: MenPage },
   { path: "/other", element: MenPage },
   { path: "/cart", element: Cart },
+  { path: "/view_cart", element: ViewCartPage },
   { path: '/*', element: HomePage }
 ];
 
