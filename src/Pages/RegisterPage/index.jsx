@@ -1,18 +1,46 @@
+import { login } from "@/Pages/LoginPage/loginPageSlice";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { Modal } from "../components";
-import { useState } from 'react'
-
+import { register, selectLoginInfo } from "./registerPageSlice";
 
 function RegisterPage() {
+  const loginInfo = useSelector(selectLoginInfo);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [registerInfo, setRegisterInfo] = useState({
-    email: '',
-    password: '',
-    repassword: '',
-  })
+    email: "",
+    password: "",
+    repassword: "",
+  });
   const handleInputRegister = (e) => {
-    setRegisterInfo(prev => {
-      return {...prev, [e.target.getAttribute('name')]: e.target.value}
-    })
-  }
+    setRegisterInfo((prev) => {
+      return { ...prev, [e.target.getAttribute("name")]: e.target.value };
+    });
+  };
+  const handleSubmit = () => {
+    const { password, repassword, email } = registerInfo;
+    if (password === repassword) {
+      const isRepeat = loginInfo.some((item) => {
+        return item.email === email;
+      });
+      if (isRepeat) {
+        alert("Email đã tồn tại");
+      } else {
+        dispatch(
+          register({
+            email,
+            password,
+          })
+        );
+        dispatch(login({ email, password }));
+        navigate("/", { replace: true });
+      }
+    } else {
+      alert("false");
+    }
+  };
   const inputFields = [
     {
       label: "Địa chỉ email",
@@ -20,7 +48,7 @@ function RegisterPage() {
       value: registerInfo.email,
       name: "email",
       type: "email",
-      onChange: handleInputRegister
+      onChange: handleInputRegister,
     },
     {
       label: "Mật khẩu",
@@ -28,7 +56,7 @@ function RegisterPage() {
       value: registerInfo.password,
       name: "password",
       type: "password",
-      onChange: handleInputRegister
+      onChange: handleInputRegister,
     },
     {
       label: "Nhập lại mật khẩu",
@@ -36,13 +64,11 @@ function RegisterPage() {
       value: registerInfo.repassword,
       name: "repassword",
       type: "password",
-      onChange: handleInputRegister
+      onChange: handleInputRegister,
     },
-  ]
-  
-  return (
-    <Modal title="Đăng ký" inputFields={inputFields}  />
-  );
+  ];
+
+  return <Modal title="Đăng ký" inputFields={inputFields} onSubmit={handleSubmit} />;
 }
 
 export default RegisterPage;

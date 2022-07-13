@@ -1,19 +1,35 @@
+import { selectLoginInfo } from "@/Pages/RegisterPage/registerPageSlice";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { Modal } from "../components";
-import { useState } from 'react';   
+import { login } from "./loginPageSlice";
 
 function LoginPage() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const loginInfo = useSelector(selectLoginInfo);
   const [userInfo, setUserInfo] = useState({
     email: "",
-    password: ""
-  })
+    password: "",
+  });
   const handleInputUserInfo = (e) => {
-    setUserInfo(prev => {
-      return {...prev, [e.target.getAttribute('name')]: e.target.value}
-    })
-  }
+    setUserInfo((prev) => {
+      return { ...prev, [e.target.getAttribute("name")]: e.target.value };
+    });
+  };
   const handleSubmit = () => {
-
-  }
+    const { email, password } = userInfo;
+    const isTrueInfo = loginInfo.some((item) => {
+      return item.email === email && item.password === password;
+    });
+    if (isTrueInfo) {
+      dispatch(login({ email, password }));
+      navigate("/", { replace: true });
+    } else {
+      alert("false");
+    }
+  };
   const inputFields = [
     {
       label: "Địa chỉ email",
@@ -21,7 +37,7 @@ function LoginPage() {
       value: userInfo.email,
       onChange: handleInputUserInfo,
       name: "email",
-      type: "email"
+      type: "email",
     },
     {
       label: "Mật khẩu",
@@ -30,11 +46,9 @@ function LoginPage() {
       onChange: handleInputUserInfo,
       name: "password",
       type: "password",
-    }
-  ]
-  return ( 
-    <Modal title="Đăng nhập" inputFields={inputFields} onClickSubmit={handleSubmit} />
-  );
+    },
+  ];
+  return <Modal title="Đăng nhập" inputFields={inputFields} onSubmit={handleSubmit} />;
 }
 
 export default LoginPage;

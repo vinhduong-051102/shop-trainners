@@ -1,0 +1,19 @@
+.wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  .container {
+    color: #adb5bd;
+    button {
+      color: inherit;
+      padding: 10px;
+      background-color: transparent;
+      border: none;
+      font-size: 20px;
+      height: 100%;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}

@@ -1,21 +1,28 @@
-import { Popper } from "@/components";
 import { removeProduct, selectListProduct } from "@/Pages/Cart/cartSlice";
-import { faCartShopping, faMagnifyingGlass, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { selectLoginInfo } from "@/Pages/LoginPage/loginPageSlice";
+import {
+  faCartShopping,
+  faMagnifyingGlass,
+  faUserLarge,
+  faXmark,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Tippy from "@tippyjs/react/headless";
+import { Button } from "@mui/material";
 import className from "classnames/bind";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import logo from "./assets/logo-mona.png";
+import { ButtonTippy } from "./components";
 import styles from "./HeaderTitle.module.scss";
-import { Button } from "@mui/material";
+import { logout } from "@/Pages/LoginPage/loginPageSlice";
 
 const cx = className.bind(styles);
 
 function HeaderTitle() {
   const dispatch = useDispatch();
   const listProduct = useSelector(selectListProduct);
+  const loginInfo = useSelector(selectLoginInfo);
   const beforeUrl = window.location.pathname;
   useEffect(() => {
     localStorage.setItem("beforeUrl", String(beforeUrl));
@@ -23,6 +30,9 @@ function HeaderTitle() {
   const handleRemoveProduct = (index) => {
     dispatch(removeProduct(index));
   };
+  const handleLogout = () => {
+    dispatch(logout());
+  }
   return (
     <div className={cx("header-title")}>
       <div className={cx("logo")}>
@@ -35,72 +45,79 @@ function HeaderTitle() {
         </button>
       </div>
       <div className={cx("login-resgister")}>
-        <button>
-          <Link to="/register" className={cx("link")}>
-            Đăng ký
-          </Link>
-        </button>
-        <span></span>
-        <button>
-          <Link to="/login" className={cx("link")}>
-            Đăng nhập
-          </Link>
-        </button>
-      </div>
-      <div className={cx("cart")}>
-        <Tippy
-          delay={[0, 400]}
-          render={(attrs) => (
-            <Popper>
-              {listProduct.length !== 0 ? (
-                <div className={cx("container")}>
-                  {listProduct.map((item, index) => {
-                    return (
-                      <div className={cx("item")} key={index}>
-                        <div className={cx("img-product")}>
-                          <img src={item.url} alt="" />
-                        </div>
-                        <div className={cx("product-info")}>
-                          <p className={cx("product-name")}>{item.name}</p>
-                          <p className={cx("product-amount")}>Số lượng: {item.amount}</p>
-                          <p className={cx("product-price")}>
-                            Đơn giá: {item.price.toLocaleString()}
-                          </p>
-                        </div>
-                        <button onClick={() => handleRemoveProduct(index)}>
-                          <FontAwesomeIcon icon={faXmark} className={cx("remove-button")} />
-                        </button>
-                      </div>
-                    );
-                  })}
-                  <div className={cx("button-ground")}>
-                    <Link to="/view_cart">
-                      <Button variant="contained" className={cx("button")}>
-                        Xem giỏ hàng
-                      </Button>
-                    </Link>
-                    <Link to="/payment">
-                      <Button variant="contained" className={cx("button")}>
-                        Thanh toán
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
-              ) : (
-                <p>Không có sản phẩm</p>
-              )}
-            </Popper>
-          )}
-          placement="bottom-start"
-          interactive
-        >
-          <div>
+        {loginInfo.isLogin ? (
+          <ButtonTippy icon={faUserLarge} label={"Tài khoản"}>
+            <div className={cx("user")}>
+              <Link to="/user/order" className="user-item">
+                <Button className={cx("button")}>Đơn hàng</Button>
+              </Link>
+              <Link to="/" className="user-item" style={{ color: "#000" }}>
+                <Button className={cx("button")}>Thông tin tài khoản</Button>
+              </Link>
+              <Link to="/" className="user-item">
+                <Button className={cx("button")}>Địa chỉ</Button>
+              </Link>
+              <Link to="/" className="user-item">
+                <Button className={cx("button")} onClick={handleLogout}>Đăng xuất</Button>
+              </Link>
+            </div>
+          </ButtonTippy>
+        ) : (
+          <>
             <button>
-              <FontAwesomeIcon icon={faCartShopping} />
+              <Link to="/register" className={cx("link")}>
+                Đăng ký
+              </Link>
             </button>
-          </div>
-        </Tippy>
+            <span></span>
+            <button>
+              <Link to="/login" className={cx("link")}>
+                Đăng nhập
+              </Link>
+            </button>
+          </>
+        )}
       </div>
+      <ButtonTippy icon={faCartShopping} placement="bottom-start">
+        {listProduct.length !== 0 ? (
+          <div className={cx("container")}>
+            {listProduct.map((item, index) => {
+              return (
+                <div className={cx("item")} key={index}>
+                  <div className={cx("img-product")}>
+                    <img src={item.url} alt="" />
+                  </div>
+                  <div className={cx("product-info")}>
+                    <p className={cx("product-name")}>{item.name}</p>
+                    <p className={cx("product-amount")}>Số lượng: {item.amount}</p>
+                    <p className={cx("product-price")}>Đơn giá: {item.price.toLocaleString()}</p>
+                  </div>
+
+                  <FontAwesomeIcon
+                    icon={faXmark}
+                    className={cx("remove-button")}
+                    onClick={() => handleRemoveProduct(index)}
+                  />
+                </div>
+              );
+            })}
+            <div className={cx("button-ground")}>
+              <Link to="/view_cart">
+                <Button variant="contained" className={cx("button")}>
+                  Xem giỏ hàng
+                </Button>
+              </Link>
+              <Link to="/payment">
+                <Button variant="contained" className={cx("button")}>
+                  Thanh toán
+                </Button>
+              </Link>
+            </div>
+          </div>
+        ) : (
+          <p>Không có sản phẩm</p>
+        )}
+      </ButtonTippy>
     </div>
   );
 }

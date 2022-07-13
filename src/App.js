@@ -3,8 +3,11 @@ import { MainLayout } from "./Layout";
 import { publicRoutes } from './routes'
 import { Fragment } from 'react';
 
-
 function App() {
+  // const before = localStorage.getItem('beforeUrl');
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);  
+  // }, [before]);
   return (   
     <Router>
       <Routes>

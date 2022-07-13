@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 
 const cx = classNames.bind(styles);
 
-function Modal({ title, inputFields = [], onClickSubmit = () => {} }) {
+function Modal({ title, inputFields = [], onSubmit = () => {} }) {
   const beforeUrl = localStorage.getItem('beforeUrl');
   return (
     <div className={cx("wrapper")}>
@@ -34,7 +34,7 @@ function Modal({ title, inputFields = [], onClickSubmit = () => {} }) {
         })}
       </div>
       <div className={cx("footer")}>
-        <button onClick={onClickSubmit}>Xác nhận</button>
+        <button onClick={onSubmit}>Xác nhận</button>
       </div>
     </div>
   );
