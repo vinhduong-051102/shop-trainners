@@ -1,0 +1,37 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  .title {
+    font-size: 1.125rem;
+    font-weight: 550;
+    line-height: 1.5rem;
+    text-transform: capitalize;
+    color: #333;
+  }
+  .description {
+    font-size: .875rem;
+    line-height: 1.0625rem;
+    color: #555;
+  }
+  button {
+    line-height: 1;
+    background-color: rgb(238, 77, 45);
+    border: 2px rgb(255, 255, 255) solid;
+    border-radius: 2px;
+    padding: 8px 20px;
+    span {
+      color: #fff;
+      padding: 0 5px;
+      font-size: 16px;
+    }
+    &:hover {
+      opacity: 0.8;
+    }
+    &:active {
+      opacity: 1;
+    }
+  }
+}

@@ -4,11 +4,13 @@ import { Input } from "./components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { Link } from 'react-router-dom'
+import { useSelector } from "react-redux";
+import { selectBeforeUrl } from "@/Pages/pagesSlice";
 
 const cx = classNames.bind(styles);
 
 function Modal({ title, inputFields = [], onSubmit = () => {} }) {
-  const beforeUrl = localStorage.getItem('beforeUrl');
+  const beforeUrl = useSelector(selectBeforeUrl)
   return (
     <div className={cx("wrapper")}>
       <div className={cx("header")}>

@@ -1,0 +1,38 @@
+.wrapper {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  .label {
+    text-align: right;
+    color: rgba(85,85,85,.8);
+    text-transform: capitalize;
+    padding-right: 20px;
+    width: 20%;
+  }
+  input {
+    padding: 10px;
+    width: 80%;
+    border: 1px solid rgba(0, 0, 0, 0.14);
+    border-radius: 2px;
+    &:focus {
+      box-shadow: (0 0 0 / 2%) 0px 2px 0px 0px inset;
+      border: 1px solid #000;
+    }
+  }
+  .input-ground {
+    display: flex;
+    .item {
+      margin-right: 12px;
+      display: flex;
+      align-items: center;
+      input {
+        margin-right: 8px;
+        font-size: 40px;
+        border: 2px solid rgba(0, 0, 0, 0.26);
+        width: 16px;
+        height: 16px;
+        
+      }
+    }
+  }
+}

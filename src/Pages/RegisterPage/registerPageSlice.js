@@ -4,6 +4,7 @@ const registerPageSlice = createSlice({
   name: 'registerPage',
   initialState: [{
     email: "abc@gmail.com",
+    userName: "admin",
     password: "1"
   }],
   reducers: {

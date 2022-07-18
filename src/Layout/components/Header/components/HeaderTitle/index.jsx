@@ -16,6 +16,7 @@ import logo from "./assets/logo-mona.png";
 import { ButtonTippy } from "./components";
 import styles from "./HeaderTitle.module.scss";
 import { logout } from "@/Pages/LoginPage/loginPageSlice";
+import { getBeforeUrl } from "@/Pages/pagesSlice";
 
 const cx = className.bind(styles);
 
@@ -23,16 +24,17 @@ function HeaderTitle() {
   const dispatch = useDispatch();
   const listProduct = useSelector(selectListProduct);
   const loginInfo = useSelector(selectLoginInfo);
-  const beforeUrl = window.location.pathname;
   useEffect(() => {
-    localStorage.setItem("beforeUrl", String(beforeUrl));
-  }, [beforeUrl]);
+    dispatch(getBeforeUrl(window.location.pathname));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [window.location.pathname]);
+
   const handleRemoveProduct = (index) => {
     dispatch(removeProduct(index));
   };
   const handleLogout = () => {
     dispatch(logout());
-  }
+  };
   return (
     <div className={cx("header-title")}>
       <div className={cx("logo")}>
@@ -48,17 +50,24 @@ function HeaderTitle() {
         {loginInfo.isLogin ? (
           <ButtonTippy icon={faUserLarge} label={"Tài khoản"}>
             <div className={cx("user")}>
-              <Link to="/user/order" className="user-item">
+              <Link state={{}} to="/user/order" className="user-item">
                 <Button className={cx("button")}>Đơn hàng</Button>
               </Link>
-              <Link to="/" className="user-item" style={{ color: "#000" }}>
+              <Link
+                state={{}}
+                to="/user/account/profile"
+                className="user-item"
+                style={{ color: "#000" }}
+              >
                 <Button className={cx("button")}>Thông tin tài khoản</Button>
               </Link>
-              <Link to="/" className="user-item">
+              <Link state={{}} to="/user/account/address" className="user-item">
                 <Button className={cx("button")}>Địa chỉ</Button>
               </Link>
               <Link to="/" className="user-item">
-                <Button className={cx("button")} onClick={handleLogout}>Đăng xuất</Button>
+                <Button className={cx("button")} onClick={handleLogout}>
+                  Đăng xuất
+                </Button>
               </Link>
             </div>
           </ButtonTippy>

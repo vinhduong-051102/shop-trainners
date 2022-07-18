@@ -11,6 +11,7 @@ function RegisterPage() {
   const navigate = useNavigate();
   const [registerInfo, setRegisterInfo] = useState({
     email: "",
+    userName: "",
     password: "",
     repassword: "",
   });
@@ -20,7 +21,7 @@ function RegisterPage() {
     });
   };
   const handleSubmit = () => {
-    const { password, repassword, email } = registerInfo;
+    const { password, repassword, email, userName } = registerInfo;
     if (password === repassword) {
       const isRepeat = loginInfo.some((item) => {
         return item.email === email;
@@ -31,6 +32,7 @@ function RegisterPage() {
         dispatch(
           register({
             email,
+            userName,
             password,
           })
         );
@@ -48,6 +50,14 @@ function RegisterPage() {
       value: registerInfo.email,
       name: "email",
       type: "email",
+      onChange: handleInputRegister,
+    },
+    {
+      label: "Tên người dùng",
+      placeholder: "Nhập địa tên người dùng",
+      value: registerInfo.userName,
+      name: "userName",
+      type: "text",
       onChange: handleInputRegister,
     },
     {

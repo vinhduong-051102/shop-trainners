@@ -1,3 +1,5 @@
 import OrderPage from "./OrderPage";
+import AccountPage from "./AccountPage"
+import NoticePage from "./NoticePage";
 
-export { OrderPage }
+export { OrderPage, AccountPage, NoticePage }

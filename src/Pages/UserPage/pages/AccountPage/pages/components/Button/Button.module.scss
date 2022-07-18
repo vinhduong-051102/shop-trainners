@@ -1,0 +1,21 @@
+.wrapper {
+  button {
+    display: flex;
+    align-items: center;
+    padding: 8px 20px;
+    background-color: rgb(238, 77, 45);
+    border-radius: 2px;
+    border-color: transparent;
+    &:hover {
+      opacity: 0.8;
+    }
+    &:active {
+      opacity: 1;
+    }
+    p {
+      color: #fff;
+      line-height: 100%;
+      text-align: center;
+    }
+  }
+}
