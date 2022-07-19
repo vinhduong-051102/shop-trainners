@@ -1,17 +1,27 @@
 import { MainLayout } from "@/Pages/UserPage/pages/layout";
 import classNames from "classnames/bind";
+import { useState } from "react";
 import { Header } from "../components";
 import styles from "./Address.module.scss";
-import { UserInfo } from "./components";
-import { useState } from "react";
+import { Modal, UserInfo } from "./components";
+
 
 const cx = classNames.bind(styles);
 
 function Address() {
+
   const [defaultAddress, setDefaultAddress] = useState(0);
+  const [isOpenModal , setsIsOpenModal ] = useState(false)
   const handleSetDefault = (index) => {
     setDefaultAddress(index);
   };
+  const handleOpenModal = () => {
+    setsIsOpenModal(true)
+  };
+  const handleCloseModal = () => {
+    setsIsOpenModal(false)
+
+  }
   const data = [
     {
       fullName: "Dương Quý Vinh",
@@ -30,9 +40,14 @@ function Address() {
   ];
   return (
     <MainLayout>
-      <Header title="Địa Chỉ Của Tôi" btnTitle="Thêm địa chỉ mới" />
+      <Header
+        title="Địa Chỉ Của Tôi"
+        btnTitle="Thêm địa chỉ mới"
+        onClick={handleOpenModal}
+      />
 
       <div className={cx("wrapper")}>
+        <Modal open={isOpenModal} onClose={handleCloseModal} />
         {data.map((userInfo, index) => {
           const { fullName, email, address, phoneNumber } = userInfo;
           const isDefault = index === defaultAddress;

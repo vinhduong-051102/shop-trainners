@@ -7,6 +7,7 @@ import registerPageReducer from '@/Pages/RegisterPage/registerPageSlice'
 import loginPageReducer from '@/Pages/LoginPage/loginPageSlice'
 import pagesReducer from '@/Pages/pagesSlice'
 
+
 export const store = configureStore({
   reducer: {
     menuReducer,
@@ -15,7 +16,7 @@ export const store = configureStore({
     cartReducer,
     registerPageReducer,
     loginPageReducer,
-    pagesReducer
+    pagesReducer,
   }
 })
 

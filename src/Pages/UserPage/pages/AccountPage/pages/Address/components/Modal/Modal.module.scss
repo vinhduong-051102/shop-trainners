@@ -1,0 +1,26 @@
+
+.modal {
+  display: flex;
+  flex-direction: column;
+
+  .title, .container, .address {
+    margin-bottom: 25px;
+  }
+  .container {
+    .userName {
+      margin-right: 15px;
+    }
+    .phoneNumber {
+      margin-left: 15px;
+    }
+  }
+  .btn-ground {
+    align-self: flex-end;
+    .back-btn {
+      margin-right: 15px;
+    }
+    .finish-btn {
+      margin-left: 15px;
+    }
+  }
+}

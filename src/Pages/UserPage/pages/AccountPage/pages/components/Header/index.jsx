@@ -5,7 +5,7 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 const cx = classNames.bind(styles);
 
-function Header({ title, description, btnTitle }) {
+function Header({ title, description, btnTitle, onClick = () => {}}) {
   return (
     <div className={cx("wrapper")}>
       <div>
@@ -13,7 +13,7 @@ function Header({ title, description, btnTitle }) {
         <div className={cx("description")}>{description}</div>
       </div>
       {btnTitle && (
-        <button>
+        <button onClick={onClick}>
           <span>
             <FontAwesomeIcon icon={faPlus} />
           </span>

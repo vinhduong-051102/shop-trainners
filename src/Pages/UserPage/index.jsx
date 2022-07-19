@@ -4,11 +4,13 @@ import { SideBar } from "./components";
 import { Route, Routes } from "react-router-dom";
 import userRoutes from "./routes";
 
+
 const cx = classNames.bind(styles);
 
 function UserPage() {
+
   return (
-    <div className={cx("wrapper")}>
+    <div className={cx("wrapper")} >
       <SideBar />
       <Routes>
         {userRoutes.map((route, index) => {

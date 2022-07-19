@@ -40,7 +40,7 @@ function Profile() {
           onChange={handleSelectGender}
         />
         <Input label="Ngày sinh" type="date" value={birdDate} onChange={handleChangeBirdDate} />
-        <Button style={{ marginLeft: "20%" }}>Lưu</Button>
+        <Button style={{ marginLeft: "25%" }}>Lưu</Button>
       </div>
     </MainLayout>
   );
