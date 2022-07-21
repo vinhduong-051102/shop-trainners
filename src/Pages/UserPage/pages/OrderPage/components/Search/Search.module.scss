@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  background-color: #eaeaea;
+  border-radius: 5px;
+  margin: 12px 0;
+  input {
+    width: 90%;
+    background-color: inherit;
+    color: rgb(33, 33, 33);
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: text;
+
+  }
+  .icon {
+    width: 10%;
+    text-align: center;
+    border: none;
+    border-left: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: inherit;
+    font-size: 20px;
+    * {
+      cursor: inherit;
+    }
+    
+  }
+}

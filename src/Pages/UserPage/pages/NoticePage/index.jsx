@@ -1,13 +1,17 @@
 import classNames from "classnames/bind";
-import styles from './NoticePage.module.scss'
+import { MainLayout } from "../layout";
+import { News } from "./components";
+import styles from './NoticePage.module.scss';
 
 const cx =classNames.bind(styles) 
 
 function NoticePage() {
   return ( 
-    <div className={cx('wrapper')}>
-      notice
-    </div>
+    <MainLayout>
+      <div className={cx('wrapper')}>
+        <News/>
+      </div>
+    </MainLayout>
   );
 }
 
